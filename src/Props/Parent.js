@@ -4,18 +4,31 @@ import ChildFunctional from './ChildFunctional';
 
 export default class Parent extends Component {
 
-    src = "http://svcy2.myclass.vn/image/shoes2.jpg";
-    name='bitis hunter x2'
+    product = {
+        id:1,
+        name:'bitis hunter x2',
+        src : 'http://svcy2.myclass.vn/image/shoes2.jpg',
+        desc: 'Giày Việt Nam chất lượng cao, êm ái, nâng niu đôi bàn chân !',
+        price:1000,
+        size:[36,37,38,39,40]
+    }
+    
+    size = [36,37,38,39,40]
+
+    showInfo = (name)=>{
+        alert(name)
+    };
 
     render() {
+        
+        
         return (
             <div>
               <input type="text" />
-              {/* <Child propSource={this.src} name={this.name}/>
-              <Child propSource={'http://svcy2.myclass.vn/image/shoes3.jpg'} name={'bitis hunter x5'}/>
-              <Child propSource={'http://svcy2.myclass.vn/image/shoes5.jpg'} name={'bitis hunter x7'}/> */}
+           
 
-            <ChildFunctional propSource={this.src} name={this.name}/>
+            {/* <ChildFunctional productItem={this.product}/> */}
+            <Child showAlert={this.showInfo} productItem={this.product} shoesSize={this.size}/>
 
 
             </div>
