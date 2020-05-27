@@ -15,3 +15,6 @@ export default class ProductItem extends Component {
         )
     }
 }
+
+
+  
