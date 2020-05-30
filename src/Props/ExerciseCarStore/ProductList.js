@@ -8,7 +8,7 @@ export default class ProductList extends Component {
         //this.props.productsData lấy từ ExerciseCarStoreComponent
         return this.props.productsData.map((product, index) => {
             return <div className="col-3" key={index}>
-                <ProductItem item={product} />
+                <ProductItem xemChiTiet={this.props.xemChiTiet} item={product} />
             </div>
         })
     }
@@ -19,6 +19,7 @@ export default class ProductList extends Component {
             <div className="container">
                 <div className="row">
                     {this.renderProductItem()}
+          
                 </div>
             </div>
         )
