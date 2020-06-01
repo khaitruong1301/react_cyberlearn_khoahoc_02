@@ -4,33 +4,24 @@ import ChildFunctional from './ChildFunctional';
 
 export default class Parent extends Component {
 
-    product = {
-        id:1,
-        name:'bitis hunter x2',
-        src : 'http://svcy2.myclass.vn/image/shoes2.jpg',
-        desc: 'Giày Việt Nam chất lượng cao, êm ái, nâng niu đôi bàn chân !',
-        price:1000,
-        size:[36,37,38,39,40]
-    }
-    
-    size = [36,37,38,39,40]
 
-    showInfo = (name)=>{
-        alert(name)
-    };
+
+    state = { title: 'cyberlearn' }
+
+    changeTitle = () => {
+        this.setState({
+            title:'Khải'
+        })
+    }
 
     render() {
-        
-        
         return (
             <div>
-              <input type="text" />
-           
-
-            {/* <ChildFunctional productItem={this.product}/> */}
-            <Child showAlert={this.showInfo} productItem={this.product} shoesSize={this.size}/>
-
-
+                <h1>{this.state.title}</h1>
+                {/* <h3>Danh sách sản phẩm</h3>
+                {this.props.children.map((com, index) => {
+                    return com;
+                })} */}
             </div>
         )
     }
