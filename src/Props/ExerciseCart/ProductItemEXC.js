@@ -9,7 +9,7 @@ export default class ProductItemEXC extends Component {
                 <img classname="card-img-hitop" src={sanPhamProps.hinhAnh} alt={sanPhamProps.hinhAnh} style={{width:300,height:300}}/>
                 <div classname="card-body text-center">
                     <h4 classname="card-title">{sanPhamProps.tenSP}</h4>
-                    <p classname="card-text">{sanPhamProps.giaBan}</p>
+                    <p classname="card-text">{sanPhamProps.giaBan.toLocaleString()}</p>
                     <button className="btn btn-success" onClick={()=>{this.props.themGioHang(sanPhamProps)}}>Thêm giỏ hàng</button>
                 </div>
             </div>
