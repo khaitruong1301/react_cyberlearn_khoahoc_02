@@ -12,7 +12,7 @@ export default class ProductListEXC extends Component {
     renderSanPham = () => {
         return this.mangSanPham.map((sanPham, index) => {
             return <div className="col-4" key={index}>
-                <ProductItemEXC sanPhamProps={sanPham} />
+                <ProductItemEXC themGioHang={this.props.themGioHang} sanPhamProps={sanPham} />
 
             </div>
         })
