@@ -9,7 +9,7 @@ class GioHangRedux extends Component {
         return (
             <div className="modal fade" id="modelId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                 <div className="modal-dialog" role="document">
-                    <div className="modal-content">
+                    <div className="modal-content" style={{minWidth:800}}>
                         <div className="modal-header">
                             <h5 className="modal-title">Giỏ hàng</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
