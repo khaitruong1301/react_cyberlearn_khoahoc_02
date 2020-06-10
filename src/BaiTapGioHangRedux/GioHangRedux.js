@@ -9,7 +9,7 @@ class GioHangRedux extends Component {
         return (
             <div className="modal fade" id="modelId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                 <div className="modal-dialog" role="document">
-                    <div className="modal-content" style={{ minWidth: 800 }}>
+                    <div className="modal-content" style={{ minWidth: 1000 }}>
                         <div className="modal-header">
                             <h5 className="modal-title">Giỏ hàng</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -36,7 +36,11 @@ class GioHangRedux extends Component {
                                             <td><img src={spGH.hinhAnh} alt={spGH.hinhAnh} width={50} height={50} /></td>
                                             <td>{spGH.tenSP}</td>
                                             <td>{spGH.gia.toLocaleString()}</td>
-                                            <td>{spGH.soLuong.toLocaleString()}</td>
+                                            <td>
+                                                <button className="btn btn-primary" onClick={()=>{this.props.tangGiamSoLuong(spGH.maSP,true)}} > + </button>
+                                                {spGH.soLuong.toLocaleString()}
+                                                <button className="btn btn-primary" onClick={() => {this.props.tangGiamSoLuong(spGH.maSP,false)}}>-</button>
+                                            </td>
                                             <td>{(spGH.soLuong * spGH.gia).toLocaleString()}</td>
                                             <td><button className="btn btn-danger" onClick={() => {
                                                 this.props.xoaGioHang(spGH.maSP)
@@ -44,11 +48,18 @@ class GioHangRedux extends Component {
                                         </tr>
                                     })}
                                 </tbody>
+                                <tfoot>
+                                    <th colSpan={5}></th>
+                                    <th>Tổng tiền</th>
+                                    <th>{this.props.gioHang.reduce((tongTien,spGioHang,index)=>{
+                                        return tongTien+= spGioHang.soLuong *  spGioHang.gia;
+                                    },0).toLocaleString()}</th>
+                                </tfoot>
                             </table>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                          
                         </div>
                     </div>
                 </div>
@@ -77,6 +88,18 @@ const mapDispatchToProps = (dispatch) => {
             //Dùng phương thức dispatch redux cung cấp để đưa dữ liệu lên reducer
             console.log(maSP)
             dispatch(action)
+        },
+        tangGiamSoLuong : (maSP,tangGiam) => { //tangGiam = true => Xử lý tăng - tangGiam = false => Xử lý giảm
+            //Tạo action để đưa dữ liệu lên reducer
+            let action = {
+                type:'TANG_GIAM_SO_LUONG', //Thuộc tính bắt buộc để biết chạy vào case nào trong tất cả reducer
+                maSP,
+                tangGiam
+            }
+
+            //Đưa action lên reducer mỗi lần người dùng click vào
+            dispatch(action)
+
         }
     }
 }
