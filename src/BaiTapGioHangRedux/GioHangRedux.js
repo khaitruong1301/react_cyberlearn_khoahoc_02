@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 //Sử dụng thư viên connect để lấy dữ liệu từ store về
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 class GioHangRedux extends Component {
     render() {
         console.log(this.props.gioHang)
@@ -9,7 +9,7 @@ class GioHangRedux extends Component {
         return (
             <div className="modal fade" id="modelId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                 <div className="modal-dialog" role="document">
-                    <div className="modal-content" style={{minWidth:800}}>
+                    <div className="modal-content" style={{ minWidth: 800 }}>
                         <div className="modal-header">
                             <h5 className="modal-title">Giỏ hàng</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -30,7 +30,7 @@ class GioHangRedux extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.props.gioHang.map((spGH,index)=>{
+                                    {this.props.gioHang.map((spGH, index) => {
                                         return <tr key={index}>
                                             <td>{spGH.maSP}</td>
                                             <td><img src={spGH.hinhAnh} alt={spGH.hinhAnh} width={50} height={50} /></td>
@@ -38,7 +38,9 @@ class GioHangRedux extends Component {
                                             <td>{spGH.gia.toLocaleString()}</td>
                                             <td>{spGH.soLuong.toLocaleString()}</td>
                                             <td>{(spGH.soLuong * spGH.gia).toLocaleString()}</td>
-                                            <td></td>
+                                            <td><button className="btn btn-danger" onClick={() => {
+                                                this.props.xoaGioHang(spGH.maSP)
+                                            }}>Xóa</button></td>
                                         </tr>
                                     })}
                                 </tbody>
@@ -57,10 +59,27 @@ class GioHangRedux extends Component {
 }
 
 //Hàm lấy state redux biến đổi thành props của component
-const mapStateToProps = state => { //state là state tổng của ứng dụng chứa các state con (rootReducer)
+const mapStateToProps = (state) => { //state là state tổng của ứng dụng chứa các state con (rootReducer)
     return {
         gioHang: state.stateGioHang.gioHang
     }
 }
 
-export default connect(mapStateToProps)(GioHangRedux)
+//Hàm đưa dữ liệu lên reducer 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        xoaGioHang: (maSP) => {
+            //Tạo action 
+            let action = {
+                type:'XOA_GIO_HANG',
+                maSP
+            };
+            //Dùng phương thức dispatch redux cung cấp để đưa dữ liệu lên reducer
+            console.log(maSP)
+            dispatch(action)
+        }
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(GioHangRedux)
