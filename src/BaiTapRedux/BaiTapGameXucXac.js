@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './BaiTapGameXucXac.css';
 import XucXac from './XucXac';
 import ThongTinTroChoi from './ThongTinTroChoi';
-export default class BaiTapGameXucXac extends Component {
+import {connect} from 'react-redux'
+class BaiTapGameXucXac extends Component {
     render() {
         return (
             <div className="game">
@@ -12,13 +13,17 @@ export default class BaiTapGameXucXac extends Component {
 
                 <div className="row text-center mt-5">
                     <div className="col-5">
-                        <button className="btnGame">TÀI</button>
+                        <button onClick={()=>{
+                            this.props.datCuoc(true);
+                        }} className="btnGame">TÀI</button>
                     </div>
                     <div className="col-2">
                         <XucXac />       
                     </div>
                     <div className="col-5">
-                         <button className="btnGame">XỈU</button>
+                         <button onClick={()=>{
+                            this.props.datCuoc(false);                          
+                        }} className="btnGame">XỈU</button>
                     </div>
 
                 </div>
@@ -30,3 +35,18 @@ export default class BaiTapGameXucXac extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        datCuoc: (taiXiu)=>{
+            //Tạo action taiXiu
+            let action = {
+                type:'DAT_CUOC',
+                taiXiu
+            }
+            //Gửi lên reducer
+            dispatch(action);
+        }
+    }
+}
+export default connect(null,mapDispatchToProps)(BaiTapGameXucXac)
