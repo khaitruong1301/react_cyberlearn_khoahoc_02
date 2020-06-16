@@ -5,6 +5,7 @@ import DanhSachSanPham from './Props/DanhSachSanPham'
 import ExerciseCart from './Props/ExerciseCart/ExerciseCart'
 import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux'
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac'
+import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi'
 
 
 export default class App extends Component {
@@ -15,7 +16,8 @@ export default class App extends Component {
         {/* <DemoProps /> */}
         {/* <ExerciseCart /> */}
         {/* <BaiTapGioHangRedux /> */}
-        <BaiTapGameXucXac />
+        {/* <BaiTapGameXucXac /> */}
+        <BaiTapOanTuXi />
       </div>
 
     )
