@@ -12,9 +12,6 @@ export default class DemoProps extends Component {
     }
 
     render() {
-
-
-
         return (
             <div>
                 <button onClick={this.changeTitle}>Change title</button>
