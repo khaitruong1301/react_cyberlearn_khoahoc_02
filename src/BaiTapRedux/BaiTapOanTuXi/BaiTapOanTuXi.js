@@ -40,15 +40,25 @@ const mapDispatchToProp = (dispatch) =>{
             let count = 0;
             //Khai báo hàm lặp đi lặp lại
             let randomComputerItem = setInterval(()=>{
+                let soNgauNhien = Math.floor(Math.random() * 3);
                 dispatch({
-                    type:'RAN_DOM'
+                    type:'RAN_DOM',
+                    soNgauNhien
                 })
                 count ++;
                 if(count >10){
                     //Dừng hàm setInterval
                     clearInterval(randomComputerItem)
+                    
+                    dispatch({
+                        type:'END_GAME',
+
+                    })
+
                 }
             },100)
+
+
          
         }
     }
