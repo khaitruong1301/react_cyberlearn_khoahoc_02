@@ -10,22 +10,22 @@
 
 .ghe{
     border: 3px solid orange;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
+    width: 45px;
+    height: 35px;
+    font-size: 12px;
     margin-left: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     border-radius: 5px;
 }
 
 .rowNumber{
     /* font-size: 25px; */
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 35px;
     background: none;
     border:none;
     margin-left: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     font-size: 30px;
     color: yellow;
     
@@ -55,10 +55,10 @@
     background: orange;
     color: #000;
 
-    cursor: pointer;
+    cursor: no-drop !important;
     border-radius: 5px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 35px;
 
 }
 
@@ -69,7 +69,7 @@
 
     cursor: pointer;
     border-radius: 5px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 35px;
 
 }
