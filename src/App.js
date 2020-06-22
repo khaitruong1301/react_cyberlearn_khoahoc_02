@@ -7,6 +7,7 @@ import BaiTapGioHangRedux from './BaiTapGioHangRedux/BaiTapGioHangRedux'
 import BaiTapGameXucXac from './BaiTapRedux/BaiTapGameXucXac'
 import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi'
 import BaiTapBookingTicket from './BaiTapRedux/BaiTapBookingTicket/BaiTapBookingTicket'
+import DemoPureComponent from './DemoPureComponent/DemoPureComponent'
 
 
 export default class App extends Component {
@@ -19,7 +20,8 @@ export default class App extends Component {
         {/* <BaiTapGioHangRedux /> */}
         {/* <BaiTapGameXucXac /> */}
         {/* <BaiTapOanTuXi /> */}
-        <BaiTapBookingTicket />
+        {/* <BaiTapBookingTicket /> */}
+        <DemoPureComponent />
       </div>
 
     )

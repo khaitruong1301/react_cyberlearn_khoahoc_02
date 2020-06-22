@@ -148,22 +148,6 @@
         {"soGhe":"H12","gia":75000,"daDat":false}
       ] 
     },{
-      "hang": "D", 
-      "danhSachGhe": [
-        {"soGhe":"D1","gia":75000,"daDat":false},
-        {"soGhe":"D2","gia":75000,"daDat":false},
-        {"soGhe":"D3","gia":75000,"daDat":false},
-        {"soGhe":"D4","gia":75000,"daDat":false},
-        {"soGhe":"D5","gia":75000,"daDat":false},
-        {"soGhe":"D6","gia":75000,"daDat":false},
-        {"soGhe":"D7","gia":75000,"daDat":false},
-        {"soGhe":"D8","gia":75000,"daDat":false},
-        {"soGhe":"D9","gia":75000,"daDat":false},
-        {"soGhe":"D10","gia":75000,"daDat":false},
-        {"soGhe":"D11","gia":75000,"daDat":false},
-        {"soGhe":"D12","gia":75000,"daDat":false}
-      ] 
-    },{
       "hang": "I", 
       "danhSachGhe": [
         {"soGhe":"I1","gia":75000,"daDat":false},
