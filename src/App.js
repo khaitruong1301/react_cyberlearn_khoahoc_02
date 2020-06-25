@@ -9,6 +9,7 @@ import BaiTapOanTuXi from './BaiTapRedux/BaiTapOanTuXi/BaiTapOanTuXi'
 import BaiTapBookingTicket from './BaiTapRedux/BaiTapBookingTicket/BaiTapBookingTicket'
 import DemoPureComponent from './DemoPureComponent/DemoPureComponent'
 import ContextDemo from './ContextDemo/ContextDemo'
+import ExContextModelList from './ContextDemo/ExContextModelList/ExContextModelList'
 
 
 export default class App extends Component {
@@ -23,7 +24,8 @@ export default class App extends Component {
         {/* <BaiTapOanTuXi /> */}
         {/* <BaiTapBookingTicket /> */}
         {/* <DemoPureComponent /> */}
-        <ContextDemo />
+        {/* <ContextDemo /> */}
+        <ExContextModelList />
       </div>
 
     )
